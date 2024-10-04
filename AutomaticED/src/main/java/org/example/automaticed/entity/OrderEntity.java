@@ -3,7 +3,7 @@ package org.example.automaticed.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.example.automaticed.service.SensitiveConverter;
+import org.example.automaticed.service.DESSensitiveConverter;
 
 import java.io.Serializable;
 /**
@@ -27,7 +27,7 @@ public class OrderEntity implements Serializable {
     private Integer userId;
 
     @Column(name = "user_name")
-    @Convert(converter = SensitiveConverter.class)
+    @Convert(converter = DESSensitiveConverter.class)
     private String userName;
 
     @Column(name = "order_name")
