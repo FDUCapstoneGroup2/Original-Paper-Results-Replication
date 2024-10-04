@@ -1,7 +1,7 @@
 package org.example.automaticed.service.impl;
 
 import org.example.automaticed.entity.OrderEntity;
-import org.example.automaticed.mapper.IOrderDao;
+import org.example.automaticed.repository.IOrderRepository;
 import org.example.automaticed.service.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,7 +16,7 @@ import java.util.List;
 public class OrderService implements IOrderService {
 
     @Autowired
-    private IOrderDao orderDao;
+    private IOrderRepository orderDao;
 
 
     @Override
