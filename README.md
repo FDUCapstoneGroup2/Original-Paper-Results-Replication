@@ -161,14 +161,28 @@ curl -X GET "http://localhost:8080/encrypt?plaintext=HelloWorld&algorithm=DES"
 
 ---
 
-## 12. First Test Records
+## 12. Initial Test Records
+We primarily use Postman to run the initial test. The process and results are as follows:
 
 1. **Run the Test via Maven**: Maven will execute all the tests in the project, including the AutomaticEdApplicationTests class.
 We passed the test:
-![Alt text](relative/path/to/your/image.png)
+![Run Test via Maven Result Screenshot](image/first_test_screenshot1.png)
 
-2. **Encrypt and Decrypt Process for Specific Text:**: Orders are saved and retrieved via the `OrderService`, which interacts with the database. Sensitive information is encrypted before being saved.
-3. **Performance Monitoring**: The `saveAll` endpoint logs execution times to monitor performance.
+2. **Encrypt and Decrypt Process for Specific Text**:
+   a. **Encrypt**: For example, we encrypt a sensitive information user_name, which is “Hello World!”, and the result(test using Postman) is as follows:
+![Encrypt for Specific Text Result Screenshot](image/first_test_screenshot2.1.png)
+  b. **Decrypt**: We use the ciphertext “GeXlTVTmmwZZ2FKFmUCVpQ==” to decrypt the sensitive information, which we got result as follows:
+![Decrypt for Specific Text Result Screenshot](image/first_test_screenshot2.1.png)
+
+3. **Test for Automatic Encrypt for Sensitive Words**: Run the Application and Test auto encrypt and save to the Database, and then decrypt one of them.
+   a. **Encrypt and Save to Database**: Generate 100 random users in Postman, encrypt their “user_name”, then save to database:
+![Encrypt and Save Result Screenshot](image/first_test_screenshot3.1.png)
+   
+   b. **Check for Encryption**: Check the data in the “t_order” table, we can see all the “user_name” have been encrypted.
+![Check for Encryption Result Screenshot](image/first_test_screenshot3.2.png)
+
+4. **Test for Automatic Decryption for Specific Word**: Get data according to the specified order_id (100 in this test): we can see that application have retrieved the decrypted user_name which order_id = 100.
+![Test for Automatic Decryption for Specific Word Result Screenshot](image/first_test_screenshot4.png)
 
 ---
 
