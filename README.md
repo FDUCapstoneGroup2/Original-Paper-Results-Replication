@@ -161,6 +161,17 @@ curl -X GET "http://localhost:8080/encrypt?plaintext=HelloWorld&algorithm=DES"
 
 ---
 
-## 12. License
+## 12. First Test Records
+
+1. **Run the Test via Maven**: Maven will execute all the tests in the project, including the AutomaticEdApplicationTests class.
+We passed the test:
+![Alt text](relative/path/to/your/image.png)
+
+2. **Encrypt and Decrypt Process for Specific Text:**: Orders are saved and retrieved via the `OrderService`, which interacts with the database. Sensitive information is encrypted before being saved.
+3. **Performance Monitoring**: The `saveAll` endpoint logs execution times to monitor performance.
+
+---
+
+## 13. License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
