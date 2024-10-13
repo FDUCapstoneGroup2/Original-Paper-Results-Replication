@@ -3,7 +3,8 @@ package org.example.automaticed.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.example.automaticed.service.SensitiveConverter;
+// import org.example.automaticed.service.SensitiveConverter;
+import org.example.automaticed.service.DESSensitiveConverter;
 
 import java.io.Serializable;
 
@@ -40,7 +41,7 @@ public class OrderEntity implements Serializable {
      * This field is automatically encrypted and decrypted using the SensitiveConverter.
      */
     @Column(name = "user_name")
-    @Convert(converter = SensitiveConverter.class) // Automatically applies encryption/decryption
+    @Convert(converter = DESSensitiveConverter.class) // Automatically applies encryption/decryption
     private String userName;
 
     /**
