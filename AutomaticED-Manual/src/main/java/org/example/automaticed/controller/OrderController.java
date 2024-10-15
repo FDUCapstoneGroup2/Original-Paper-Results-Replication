@@ -64,7 +64,32 @@ public class OrderController {
 
     @GetMapping("/get")
     public String get(@RequestParam Long orderId) {
-        String username = EncryptionUtil.encrypt(orderService.getUsernameByOrderId(orderId), "DES");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        long startTime = System.currentTimeMillis();
+        System.out.println("Start Time: " + sdf.format(new Date(startTime)));
+
+        // String username = EncryptionUtil.encrypt(orderService.getUsernameByOrderId(orderId), "DES");
+        String username;
+        try {
+            // decrypt username
+            username = EncryptionUtil.decrypt(orderService.getUsernameByOrderId(orderId), "DES");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Error decrypting username";
+        }
+
+        long endTime = System.currentTimeMillis();
+        System.out.println("End Time: " + sdf.format(new Date(endTime)));
+
+        long durationMillis = endTime - startTime;
+
+        long minutes = TimeUnit.MILLISECONDS.toMinutes(durationMillis);
+        long seconds = TimeUnit.MILLISECONDS.toSeconds(durationMillis) - TimeUnit.MINUTES.toSeconds(minutes);
+        long millis = durationMillis % 1000;
+
+        System.out.println("---------Execution Time: " + minutes + " min " + seconds + " sec " + millis + " ms");
+
         return username;
     }
 
