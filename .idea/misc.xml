@@ -5,6 +5,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/AutomaticED/pom.xml" />
+        <option value="$PROJECT_DIR$/AutomaticED_Manual/pom.xml" />
+        <option value="$PROJECT_DIR$/AutomaticED_AES/pom.xml" />
       </list>
     </option>
   </component>

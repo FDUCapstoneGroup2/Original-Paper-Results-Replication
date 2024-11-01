@@ -7,13 +7,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="AutomaticED-AES" />
         <module name="AutomaticED" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AutomaticED (1)" target="17" />
+      <module name="AutomaticED (2)" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="AutomaticED" options="-parameters" />
+      <module name="AutomaticED (1)" options="-parameters" />
+      <module name="AutomaticED (2)" options="-parameters" />
+      <module name="AutomaticED-AES" options="-parameters" />
     </option>
   </component>
 </project>
