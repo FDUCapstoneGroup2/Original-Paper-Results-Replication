@@ -48,6 +48,11 @@ public class OrderService implements IOrderService {
         return resultList;
     }
 
+    @Override
+    public List<OrderEntity> findAll() {
+        return orderDao.findAll();
+    }
+
     private static List<OrderEntity> generateRandomOrders(int count) {
         List<OrderEntity> orders = new ArrayList<>();
         for (int i = 0; i < count; i++) {
